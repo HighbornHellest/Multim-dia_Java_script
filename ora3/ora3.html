@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ora3</title>
+    <!-- ha más fileban lenne a scriptfile akkor \<script src="filename.js"\> </script> ott tudná keresni a myFunc-ot stb-->
+</head>
+
+<body>
+
+
+<p id="vmi">eredit szöveg </p>
+<button type ="button" onclick="myFunc()"> Módosít </button>
+
+<script>
+    // constant változó
+    var a = 0;
+    function myFunc()
+    {
+
+        document.getElementById("vmi").innerHTML="vmi tök más "+a;
+        this.a=a+1;
+
+        console.log("log");
+
+      //  alert("dont use this");
+        b.setAdat(100);
+        b.kiir();
+    }
+    var ember =
+        {
+             cimke: "ez egy objektum",
+            cimke2: "ez a nyelv 1 vicc"
+        }
+        //tudok ilyent is
+    function Osztalynev()
+    {
+
+        var adat;
+        function _setAdat(a) //ez it private
+        {
+            this.adat = a;
+        }
+
+        function _kiir()
+        {
+            console.log(this.adat);
+        }
+
+        this.setAdat=_setAdat; // privátból át publicba
+        this.kiir=_kiir;
+    }
+    var b = new Osztalynev();
+    var fv1 = function()
+    {
+        //bla bla bla bla
+    }
+
+</script>
+
+</body>
+</html>

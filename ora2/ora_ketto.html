@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <title>Cím</title>
+</head>
+<body>
+
+<canvas id="vaszon" width="300" height="600" style="border:1px solid black">
+    <script>
+        //itt így kell kommentelni
+        var c = document.getElementById("vaszon");
+        var ctx = c.getContext("2d");
+
+        ctx.moveTo(50,30);
+        ctx.lineTo(200,100);
+        ctx.lineTo(50,100);
+        ctx.lineTo(50,30);
+        ctx.moveTo(75,100);
+        ctx.lineTo(75,41);
+        ctx.stroke();
+
+
+
+
+        ctx.beginPath();
+        ctx.arc(50,200,40,0, 2*3.141592);
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.rect(150,200,40,40);
+        ctx.stroke();
+
+        ctx.font="30px Arial";
+        ctx.fillText("Hello World", 100, 150);
+        ctx.strokeText("stroketext",100,190);
+        ctx.stroke();
+
+
+        var grd = ctx.createLinearGradient(0,30,300,2);
+        grd.addColorStop(0,"Crimson");
+        grd.addColorStop(1,"white");
+        ctx.fillStyle = grd; //ha ezt nem cisnálom meg akkor a default kitöltési style-t csinálja meg
+        ctx.fillRect(190,240,40,40);
+//kép beillesztése a canvasba
+        var img=new Image();
+        img.src = 'crit.jpg';
+        img.onload = function()
+        {
+            ctx.drawImage(img, 0,300,300,300);
+        }
+
+
+
+    </script>
+
+</canvas>
+
+
+
+</body>
+</html>
